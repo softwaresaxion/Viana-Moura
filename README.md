@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
@@ -9,244 +10,244 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f3f5f7;
-    padding-top:110px;
-    color:#222;
+    background:#f3f5f7;
+    padding-top:110px;
+    color:#222;
 }
 
 /* TOPO */
 .topbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:95px;
-    background:#8B1E1E;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 25px;
-    z-index:999;
-    box-shadow:0 3px 10px rgba(0,0,0,0.25);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:95px;
+    background:#8B1E1E;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+    z-index:999;
+    box-shadow:0 3px 10px rgba(0,0,0,0.25);
 }
 
 .logo-area{
-    display:flex;
-    align-items:center;
-    gap:15px;
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
 .logo-area img{
-    width:80px;
-    height:80px;
-    object-fit:contain;
-    border-radius:10px;
-    background:#fff;
-    padding:5px;
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    border-radius:10px;
+    background:#fff;
+    padding:5px;
 }
 
 .logo-area h1{
-    color:#fff;
-    font-size:26px;
+    color:#fff;
+    font-size:26px;
 }
 
 .top-buttons{
-    display:flex;
-    gap:15px;
-    align-items:center;
+    display:flex;
+    gap:15px;
+    align-items:center;
 }
 
 .top-btn{
-    background:#D4A017;
-    border:none;
-    color:#fff;
-    width:95px;
-    height:75px;
-    border-radius:12px;
-    cursor:pointer;
-    font-size:13px;
-    font-weight:bold;
-    transition:0.3s;
+    background:#D4A017;
+    border:none;
+    color:#fff;
+    width:95px;
+    height:75px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:bold;
+    transition:0.3s;
 }
 
 .top-btn:hover{
-    background:#b8870f;
-    transform:translateY(-2px);
+    background:#b8870f;
+    transform:translateY(-2px);
 }
 
 .top-btn span{
-    font-size:28px;
-    display:block;
+    font-size:28px;
+    display:block;
 }
 
 /* CONTAINER */
 .container{
-    width:95%;
-    margin:auto;
-    background:#fff;
-    padding:25px;
-    border-radius:16px;
-    box-shadow:0 3px 15px rgba(0,0,0,0.1);
+    width:95%;
+    margin:auto;
+    background:#fff;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 3px 15px rgba(0,0,0,0.1);
 }
 
 /* FORM */
 .form-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
-    margin-bottom:25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    margin-bottom:25px;
 }
 
 .field{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
 }
 
 .field label{
-    font-weight:bold;
-    color:#444;
+    font-weight:bold;
+    color:#444;
 }
 
 .field select{
-    height:45px;
-    border:1px solid #ccc;
-    border-radius:10px;
-    padding:0 12px;
-    font-size:15px;
-    background:#fff;
+    height:45px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    padding:0 12px;
+    font-size:15px;
+    background:#fff;
 }
 
 .quantity-box{
-    display:flex;
-    align-items:center;
-    gap:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 .quantity-btn{
-    width:40px;
-    height:40px;
-    border:none;
-    background:#8B1E1E;
-    color:#fff;
-    font-size:20px;
-    border-radius:8px;
-    cursor:pointer;
+    width:40px;
+    height:40px;
+    border:none;
+    background:#8B1E1E;
+    color:#fff;
+    font-size:20px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 .quantity-number{
-    min-width:40px;
-    text-align:center;
-    font-size:18px;
-    font-weight:bold;
+    min-width:40px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
 }
 
 /* BOTÃO ADICIONAR */
 .actions{
-    display:flex;
-    justify-content:flex-end;
-    margin-bottom:20px;
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:20px;
 }
 
 .add-btn{
-    background:#198754;
-    color:#fff;
-    border:none;
-    padding:14px 35px;
-    border-radius:12px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
+    background:#198754;
+    color:#fff;
+    border:none;
+    padding:14px 35px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .add-btn:hover{
-    background:#146c43;
+    background:#146c43;
 }
 
 /* TABELA */
 .table-container{
-    overflow:auto;
+    overflow:auto;
 }
 
 table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:1300px;
+    width:100%;
+    border-collapse:collapse;
+    min-width:1300px;
 }
 
 thead{
-    background:#8B1E1E;
-    color:#fff;
+    background:#8B1E1E;
+    color:#fff;
 }
 
 th, td{
-    padding:12px;
-    border:1px solid #ddd;
-    text-align:center;
-    font-size:14px;
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+    font-size:14px;
 }
 
 tbody tr:nth-child(even){
-    background:#f7f7f7;
+    background:#f7f7f7;
 }
 
 .checkbox{
-    width:22px;
-    height:22px;
-    cursor:pointer;
+    width:22px;
+    height:22px;
+    cursor:pointer;
 }
 
 /* PDF */
 .pdf-area{
-    margin-top:25px;
-    display:flex;
-    justify-content:flex-end;
+    margin-top:25px;
+    display:flex;
+    justify-content:flex-end;
 }
 
 .pdf-btn{
-    background:#0d6efd;
-    color:#fff;
-    border:none;
-    padding:14px 30px;
-    border-radius:12px;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
+    background:#0d6efd;
+    color:#fff;
+    border:none;
+    padding:14px 30px;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .pdf-btn:hover{
-    background:#0b5ed7;
+    background:#0b5ed7;
 }
 
 /* RESPONSIVO */
 @media(max-width:768px){
 
-    .topbar{
-        height:auto;
-        padding:15px;
-        flex-direction:column;
-        gap:15px;
-    }
+    .topbar{
+        height:auto;
+        padding:15px;
+        flex-direction:column;
+        gap:15px;
+    }
 
-    body{
-        padding-top:180px;
-    }
+    body{
+        padding-top:180px;
+    }
 
-    .top-buttons{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+    .top-buttons{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
 
-    .logo-area h1{
-        font-size:20px;
-    }
+    .logo-area h1{
+        font-size:20px;
+    }
 }
 </style>
 </head>
@@ -255,143 +256,143 @@ tbody tr:nth-child(even){
 <!-- BARRA SUPERIOR -->
 <div class="topbar">
 
-    <div class="logo-area">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP_N9FDlaPHwC_g8lj_j5SbreF5nwMz_O6evgHvOBX6o8M-9JeYA&s&ec=121657058" alt="Logo">
-        <h1>Viana e Moura - Controle de Ferramentas</h1>
-    </div>
+    <div class="logo-area">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP_N9FDlaPHwC_g8lj_j5SbreF5nwMz_O6evgHvOBX6o8M-9JeYA&s&ec=121657058" alt="Logo">
+        <h1>Viana e Moura - Controle de Ferramentas</h1>
+    </div>
 
-    <div class="top-buttons">
+    <div class="top-buttons">
 
-        <button class="top-btn" onclick="cadastrarPessoa()">
-            <span>👤</span>
-            Cadastrar Pessoa
-        </button>
+        <button class="top-btn" onclick="cadastrarPessoa()">
+            <span>👤</span>
+            Cadastrar Pessoa
+        </button>
 
-        <button class="top-btn" onclick="cadastrarGrupo()">
-            <span>👥</span>
-            Cadastrar Grupo
-        </button>
+        <button class="top-btn" onclick="cadastrarGrupo()">
+            <span>👥</span>
+            Cadastrar Grupo
+        </button>
 
-        <button class="top-btn" onclick="limparTabela()">
-            <span>🗑️</span>
-            Limpar Tabela
-        </button>
+        <button class="top-btn" onclick="limparTabela()">
+            <span>🗑️</span>
+            Limpar Tabela
+        </button>
 
-    </div>
+    </div>
 
 </div>
 
 <!-- CONTEÚDO -->
 <div class="container">
 
-    <div class="form-grid">
+    <div class="form-grid">
 
-        <!-- QUEM ENTREGA -->
-        <div class="field">
-            <label>Quem está entregando</label>
-            <select id="entreguePor">
-                <option value="">Selecione</option>
-                <option>Elisa</option>
-                <option>Ian Sotero</option>
-                <option>Jessiquele</option>
-                <option>Sheilane Rocha</option>
-            </select>
-        </div>
+        <!-- QUEM ENTREGA -->
+        <div class="field">
+            <label>Quem está entregando</label>
+            <select id="entreguePor">
+                <option value="">Selecione</option>
+                <option>Elisa</option>
+                <option>Ian Sotero</option>
+                <option>Jessiquele</option>
+                <option>Sheilane Rocha</option>
+            </select>
+        </div>
 
-        <!-- PESSOA -->
-        <div class="field">
-            <label>Nome da Pessoa</label>
-            <select id="nomePessoa">
-                <option value="">Selecione</option>
-            </select>
-        </div>
+        <!-- PESSOA -->
+        <div class="field">
+            <label>Nome da Pessoa</label>
+            <select id="nomePessoa">
+                <option value="">Selecione</option>
+            </select>
+        </div>
 
-        <!-- GRUPO -->
-        <div class="field">
-            <label>Grupo</label>
-            <select id="grupoPessoa">
-                <option>Avulso - Sem grupo</option>
-            </select>
-        </div>
+        <!-- GRUPO -->
+        <div class="field">
+            <label>Grupo</label>
+            <select id="grupoPessoa">
+                <option>Avulso - Sem grupo</option>
+            </select>
+        </div>
 
-        <!-- ETAPA -->
-        <div class="field">
-            <label>Etapa</label>
-            <select id="etapa">
-                <option value="">Selecione</option>
-                <option>Acabamento 1</option>
-                <option>Acabamento 2</option>
-                <option>Coberta</option>
-                <option>Forma</option>
-                <option>Pré Forma</option>
-                <option>Radier</option>
-            </select>
-        </div>
+        <!-- ETAPA -->
+        <div class="field">
+            <label>Etapa</label>
+            <select id="etapa">
+                <option value="">Selecione</option>
+                <option>Acabamento 1</option>
+                <option>Acabamento 2</option>
+                <option>Coberta</option>
+                <option>Forma</option>
+                <option>Pré Forma</option>
+                <option>Radier</option>
+            </select>
+        </div>
 
-        <!-- CATEGORIA -->
-        <div class="field">
-            <label>Categoria</label>
-            <select id="categoria" onchange="atualizarFerramentas()">
-                <option value="">Selecione</option>
-                <option>Caixote</option>
-                <option>Ferramenta elétrica</option>
-                <option>Ferramenta grande</option>
-                <option>Ferramenta pequena</option>
-            </select>
-        </div>
+        <!-- CATEGORIA -->
+        <div class="field">
+            <label>Categoria</label>
+            <select id="categoria" onchange="atualizarFerramentas()">
+                <option value="">Selecione</option>
+                <option>Caixote</option>
+                <option>Ferramenta elétrica</option>
+                <option>Ferramenta grande</option>
+                <option>Ferramenta pequena</option>
+            </select>
+        </div>
 
-        <!-- FERRAMENTA -->
-        <div class="field">
-            <label>Ferramenta</label>
-            <select id="ferramenta">
-                <option value="">Selecione</option>
-            </select>
-        </div>
+        <!-- FERRAMENTA -->
+        <div class="field">
+            <label>Ferramenta</label>
+            <select id="ferramenta">
+                <option value="">Selecione</option>
+            </select>
+        </div>
 
-        <!-- QUANTIDADE -->
-        <div class="field">
-            <label>Quantidade</label>
+        <!-- QUANTIDADE -->
+        <div class="field">
+            <label>Quantidade</label>
 
-            <div class="quantity-box">
-                <button class="quantity-btn" onclick="diminuir()">-</button>
-                <div class="quantity-number" id="quantidade">1</div>
-                <button class="quantity-btn" onclick="aumentar()">+</button>
-            </div>
+            <div class="quantity-box">
+                <button class="quantity-btn" onclick="diminuir()">-</button>
+                <div class="quantity-number" id="quantidade">1</div>
+                <button class="quantity-btn" onclick="aumentar()">+</button>
+            </div>
 
-        </div>
+        </div>
 
-    </div>
+    </div>
 
-    <!-- BOTÃO -->
-    <div class="actions">
-        <button class="add-btn" onclick="adicionarLinha()">Adicionar</button>
-    </div>
+    <!-- BOTÃO -->
+    <div class="actions">
+        <button class="add-btn" onclick="adicionarLinha()">Adicionar</button>
+    </div>
 
-    <!-- TABELA -->
-    <div class="table-container">
-        <table id="tabela">
-            <thead>
-                <tr>
-                    <th>Nome da Pessoa</th>
-                    <th>Grupo</th>
-                    <th>Categoria</th>
-                    <th>Ferramenta</th>
-                    <th>Quantidade</th>
-                    <th>Etapa</th>
-                    <th>Data</th>
-                    <th>Entregue por</th>
-                    <th>Devolução</th>
-                </tr>
-            </thead>
+    <!-- TABELA -->
+    <div class="table-container">
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>Nome da Pessoa</th>
+                    <th>Grupo</th>
+                    <th>Categoria</th>
+                    <th>Ferramenta</th>
+                    <th>Quantidade</th>
+                    <th>Etapa</th>
+                    <th>Data</th>
+                    <th>Entregue por</th>
+                    <th>Devolução</th>
+                </tr>
+            </thead>
 
-            <tbody id="tbody"></tbody>
-        </table>
-    </div>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
 
-    <!-- PDF -->
-    <div class="pdf-area">
-        <button class="pdf-btn" onclick="baixarPDF()">Salvar PDF</button>
-    </div>
+    <!-- PDF -->
+    <div class="pdf-area">
+        <button class="pdf-btn" onclick="baixarPDF()">Salvar PDF</button>
+    </div>
 
 </div>
 
@@ -402,30 +403,30 @@ SALVAMENTO
 ========================= */
 
 function salvarDados(){
-    localStorage.setItem("dadosTabela", document.getElementById("tbody").innerHTML);
+    localStorage.setItem("dadosTabela", document.getElementById("tbody").innerHTML);
 }
 
 function carregarDados(){
-    const dados = localStorage.getItem("dadosTabela");
-    if(dados){
-        document.getElementById("tbody").innerHTML = dados;
-    }
+    const dados = localStorage.getItem("dadosTabela");
+    if(dados){
+        document.getElementById("tbody").innerHTML = dados;
+    }
 }
 
 function salvarPessoas(lista){
-    localStorage.setItem("pessoasVM", JSON.stringify(lista));
+    localStorage.setItem("pessoasVM", JSON.stringify(lista));
 }
 
 function carregarPessoas(){
-    return JSON.parse(localStorage.getItem("pessoasVM")) || [];
+    return JSON.parse(localStorage.getItem("pessoasVM")) || [];
 }
 
 function salvarGrupos(lista){
-    localStorage.setItem("gruposVM", JSON.stringify(lista));
+    localStorage.setItem("gruposVM", JSON.stringify(lista));
 }
 
 function carregarGrupos(){
-    return JSON.parse(localStorage.getItem("gruposVM")) || [];
+    return JSON.parse(localStorage.getItem("gruposVM")) || [];
 }
 
 /* =========================
@@ -434,36 +435,36 @@ PESSOAS
 
 function cadastrarPessoa(){
 
-    let nome = prompt("Digite o nome da pessoa:");
+    let nome = prompt("Digite o nome da pessoa:");
 
-    if(!nome) return;
+    if(!nome) return;
 
-    nome = nome.trim();
+    nome = nome.trim();
 
-    let pessoas = carregarPessoas();
+    let pessoas = carregarPessoas();
 
-    if(!pessoas.includes(nome)){
-        pessoas.push(nome);
-        pessoas.sort();
-        salvarPessoas(pessoas);
-        atualizarSelectPessoas();
-    }
+    if(!pessoas.includes(nome)){
+        pessoas.push(nome);
+        pessoas.sort();
+        salvarPessoas(pessoas);
+        atualizarSelectPessoas();
+    }
 
 }
 
 function atualizarSelectPessoas(){
 
-    const select = document.getElementById("nomePessoa");
+    const select = document.getElementById("nomePessoa");
 
-    select.innerHTML = `<option value="">Selecione</option>`;
+    select.innerHTML = `<option value="">Selecione</option>`;
 
-    let pessoas = carregarPessoas();
+    let pessoas = carregarPessoas();
 
-    pessoas.sort();
+    pessoas.sort();
 
-    pessoas.forEach(pessoa=>{
-        select.innerHTML += `<option>${pessoa}</option>`;
-    });
+    pessoas.forEach(pessoa=>{
+        select.innerHTML += `<option>${pessoa}</option>`;
+    });
 
 }
 
@@ -473,36 +474,36 @@ GRUPOS
 
 function cadastrarGrupo(){
 
-    let grupo = prompt("Digite o nome do grupo:");
+    let grupo = prompt("Digite o nome do grupo:");
 
-    if(!grupo) return;
+    if(!grupo) return;
 
-    grupo = grupo.trim();
+    grupo = grupo.trim();
 
-    let grupos = carregarGrupos();
+    let grupos = carregarGrupos();
 
-    if(!grupos.includes(grupo)){
-        grupos.push(grupo);
-        grupos.sort();
-        salvarGrupos(grupos);
-        atualizarSelectGrupos();
-    }
+    if(!grupos.includes(grupo)){
+        grupos.push(grupo);
+        grupos.sort();
+        salvarGrupos(grupos);
+        atualizarSelectGrupos();
+    }
 
 }
 
 function atualizarSelectGrupos(){
 
-    const select = document.getElementById("grupoPessoa");
+    const select = document.getElementById("grupoPessoa");
 
-    select.innerHTML = `<option>Avulso - Sem grupo</option>`;
+    select.innerHTML = `<option>Avulso - Sem grupo</option>`;
 
-    let grupos = carregarGrupos();
+    let grupos = carregarGrupos();
 
-    grupos.sort();
+    grupos.sort();
 
-    grupos.forEach(grupo=>{
-        select.innerHTML += `<option>${grupo}</option>`;
-    });
+    grupos.forEach(grupo=>{
+        select.innerHTML += `<option>${grupo}</option>`;
+    });
 
 }
 
@@ -591,29 +592,29 @@ const ferramentas = {
 
 function atualizarFerramentas(){
 
-    const categoria = document.getElementById("categoria").value;
-    const select = document.getElementById("ferramenta");
+    const categoria = document.getElementById("categoria").value;
+    const select = document.getElementById("ferramenta");
 
-    select.innerHTML = `<option value="">Selecione</option>`;
+    select.innerHTML = `<option value="">Selecione</option>`;
 
-    if(categoria === "Caixote"){
-        select.style.display = "none";
-        return;
-    }else{
-        select.style.display = "block";
-    }
+    if(categoria === "Caixote"){
+        select.style.display = "none";
+        return;
+    }else{
+        select.style.display = "block";
+    }
 
-    if(ferramentas[categoria]){
+    if(ferramentas[categoria]){
 
-        let lista = ferramentas[categoria];
+        let lista = ferramentas[categoria];
 
-        lista.sort();
+        lista.sort();
 
-        lista.forEach(item=>{
-            select.innerHTML += `<option>${item}</option>`;
-        });
+        lista.forEach(item=>{
+            select.innerHTML += `<option>${item}</option>`;
+        });
 
-    }
+    }
 
 }
 
@@ -624,15 +625,15 @@ QUANTIDADE
 let quantidade = 1;
 
 function aumentar(){
-    quantidade++;
-    document.getElementById("quantidade").innerText = quantidade;
+    quantidade++;
+    document.getElementById("quantidade").innerText = quantidade;
 }
 
 function diminuir(){
-    if(quantidade > 1){
-        quantidade--;
-        document.getElementById("quantidade").innerText = quantidade;
-    }
+    if(quantidade > 1){
+        quantidade--;
+        document.getElementById("quantidade").innerText = quantidade;
+    }
 }
 
 /* =========================
@@ -641,54 +642,54 @@ ADICIONAR
 
 function adicionarLinha(){
 
-    const entreguePor = document.getElementById("entreguePor").value;
-    const nome = document.getElementById("nomePessoa").value;
-    const grupo = document.getElementById("grupoPessoa").value;
-    const etapa = document.getElementById("etapa").value;
-    const categoria = document.getElementById("categoria").value;
-    const ferramenta = document.getElementById("ferramenta").value;
+    const entreguePor = document.getElementById("entreguePor").value;
+    const nome = document.getElementById("nomePessoa").value;
+    const grupo = document.getElementById("grupoPessoa").value;
+    const etapa = document.getElementById("etapa").value;
+    const categoria = document.getElementById("categoria").value;
+    const ferramenta = document.getElementById("ferramenta").value;
 
-    if(!entreguePor || !nome || !grupo || !etapa || !categoria){
-        alert("Preencha todos os campos.");
-        return;
-    }
+    if(!entreguePor || !nome || !grupo || !etapa || !categoria){
+        alert("Preencha todos os campos.");
+        return;
+    }
 
-    if(categoria !== "Caixote" && !ferramenta){
-        alert("Selecione a ferramenta.");
-        return;
-    }
+    if(categoria !== "Caixote" && !ferramenta){
+        alert("Selecione a ferramenta.");
+        return;
+    }
 
-    const data = new Date().toLocaleString("pt-BR");
+    const data = new Date().toLocaleString("pt-BR");
 
-    const tbody = document.getElementById("tbody");
+    const tbody = document.getElementById("tbody");
 
-    tbody.innerHTML += `
-        <tr>
-            <td>${nome}</td>
-            <td>${grupo}</td>
-            <td>${categoria}</td>
-            <td>${categoria === "Caixote" ? "-" : ferramenta}</td>
-            <td>${quantidade}</td>
-            <td>${etapa}</td>
-            <td>${data}</td>
-            <td>${entreguePor}</td>
-            <td>
-                <input type="checkbox" class="checkbox">
-            </td>
-        </tr>
-    `;
+    tbody.innerHTML += `
+        <tr>
+            <td>${nome}</td>
+            <td>${grupo}</td>
+            <td>${categoria}</td>
+            <td>${categoria === "Caixote" ? "-" : ferramenta}</td>
+            <td>${quantidade}</td>
+            <td>${etapa}</td>
+            <td>${data}</td>
+            <td>${entreguePor}</td>
+            <td>
+                <input type="checkbox" class="checkbox">
+            </td>
+        </tr>
+    `;
 
-    salvarDados();
+    salvarDados();
 
-    /* LIMPAR */
-    document.getElementById("nomePessoa").value = "";
-    document.getElementById("grupoPessoa").value = "Avulso - Sem grupo";
-    document.getElementById("etapa").value = "";
-    document.getElementById("categoria").value = "";
-    document.getElementById("ferramenta").innerHTML = `<option value="">Selecione</option>`;
+    /* LIMPAR */
+    document.getElementById("nomePessoa").value = "";
+    document.getElementById("grupoPessoa").value = "Avulso - Sem grupo";
+    document.getElementById("etapa").value = "";
+    document.getElementById("categoria").value = "";
+    document.getElementById("ferramenta").innerHTML = `<option value="">Selecione</option>`;
 
-    quantidade = 1;
-    document.getElementById("quantidade").innerText = quantidade;
+    quantidade = 1;
+    document.getElementById("quantidade").innerText = quantidade;
 
 }
 
@@ -698,13 +699,13 @@ LIMPAR TABELA
 
 function limparTabela(){
 
-    if(confirm("Deseja apagar toda a tabela?")){
+    if(confirm("Deseja apagar toda a tabela?")){
 
-        document.getElementById("tbody").innerHTML = "";
+        document.getElementById("tbody").innerHTML = "";
 
-        localStorage.removeItem("dadosTabela");
+        localStorage.removeItem("dadosTabela");
 
-    }
+    }
 
 }
 
@@ -714,73 +715,73 @@ PDF
 
 function baixarPDF(){
 
-    const { jsPDF } = window.jspdf;
+    const { jsPDF } = window.jspdf;
 
-    const doc = new jsPDF('landscape');
+    const doc = new jsPDF('landscape');
 
-    doc.text("Controle de Entrega de Ferramentas - Viana e Moura", 14, 15);
+    doc.text("Controle de Entrega de Ferramentas - Viana e Moura", 14, 15);
 
-    const linhas = [];
+    const linhas = [];
 
 document.querySelectorAll("#tbody tr").forEach(tr => {
 
-    const checkbox =
-    tr.querySelector('input[type="checkbox"]').checked ? "SIM" : "NÃO";
+    const checkbox =
+    tr.querySelector('input[type="checkbox"]').checked ? "SIM" : "NÃO";
 
-    const colunas = tr.querySelectorAll("td");
+    const colunas = tr.querySelectorAll("td");
 
-    linhas.push([
-        colunas[0].innerText,
-        colunas[1].innerText,
-        colunas[2].innerText,
-        colunas[3].innerText,
-        colunas[4].innerText,
-        colunas[5].innerText,
-        colunas[6].innerText,
-        colunas[7].innerText,
-        checkbox
-    ]);
+    linhas.push([
+        colunas[0].innerText,
+        colunas[1].innerText,
+        colunas[2].innerText,
+        colunas[3].innerText,
+        colunas[4].innerText,
+        colunas[5].innerText,
+        colunas[6].innerText,
+        colunas[7].innerText,
+        checkbox
+    ]);
 
 });
 
 doc.autoTable({
 
-    head:[[
-        "Nome",
-        "Grupo",
-        "Categoria",
-        "Ferramenta",
-        "Quantidade",
-        "Etapa",
-        "Data",
-        "Entregue por",
-        "Devolução"
-    ]],
+    head:[[
+        "Nome",
+        "Grupo",
+        "Categoria",
+        "Ferramenta",
+        "Quantidade",
+        "Etapa",
+        "Data",
+        "Entregue por",
+        "Devolução"
+    ]],
 
-    body:linhas,
+    body:linhas,
 
-    startY:25,
+    startY:25,
 
-    styles:{
-        fontSize:8
-    }
+    styles:{
+        fontSize:8
+    }
 
 });
 
-    // DATA E HORA PARA O NOME DO PDF
-    const agora = new Date();
+    // DATA E HORA PARA O NOME DO PDF
+    const agora = new Date();
 
-    const dia = String(agora.getDate()).padStart(2, '0');
-    const mes = String(agora.getMonth() + 1).padStart(2, '0');
-    const ano = agora.getFullYear();
+    const dia = String(agora.getDate()).padStart(2, '0');
+    const mes = String(agora.getMonth() + 1).padStart(2, '0');
+    const ano = agora.getFullYear();
 
-    const hora = String(agora.getHours()).padStart(2, '0');
-    const minuto = String(agora.getMinutes()).padStart(2, '0');
+    const hora = String(agora.getHours()).padStart(2, '0');
+    const minuto = String(agora.getMinutes()).padStart(2, '0');
 
-    const nomeArquivo =
-    `Controle de Entrega de Ferramentas - ${dia}-${mes}-${ano} ${hora}-${minuto}.pdf`;
+    const nomeArquivo =
+    `Controle de Entrega de Ferramentas - ${dia}-${mes}-${ano} ${hora}-${minuto}.pdf`;
 
-    doc.save(nomeArquivo);
+    doc.save(nomeArquivo);
 
 }
 
