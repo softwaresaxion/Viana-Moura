@@ -682,7 +682,10 @@ function adicionarLinha(){
     salvarDados();
 
     /* LIMPAR */
-    
+    document.getElementById("nomePessoa").value = "";
+    document.getElementById("grupoPessoa").value = "Avulso - Sem grupo";
+    document.getElementById("etapa").value = "";
+    document.getElementById("categoria").value = "";
     document.getElementById("ferramenta").innerHTML = `<option value="">Selecione</option>`;
 
     quantidade = 1;
@@ -794,3 +797,4 @@ carregarDados();
 
 </body>
 </html>
+
