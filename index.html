@@ -689,17 +689,12 @@ function adicionarLinha(){
 
     salvarDados();
 
-    /* LIMPAR */
-    document.getElementById("nomePessoa").value = "";
-    document.getElementById("grupoPessoa").value = "Avulso - Sem grupo";
-    document.getElementById("etapa").value = "";
-    document.getElementById("categoria").value = "";
-    document.getElementById("ferramenta").innerHTML = `<option value="">Selecione</option>`;
+ /* LIMPAR APENAS FERRAMENTA */
 
-    quantidade = 1;
-    document.getElementById("quantidade").innerText = quantidade;
+document.getElementById("ferramenta").innerHTML = `<option value="">Selecione</option>`;
 
-}
+quantidade = 1;
+document.getElementById("quantidade").innerText = quantidade;
 
 /* =========================
 LIMPAR TABELA
