@@ -634,91 +634,51 @@ FERRAMENTAS
 ========================= */
 
 const ferramentas = {
-"Ferramenta grande":[
-"Alavanca",
-"Balde",
-"Chibanca",
-"Enxada",
-"Pá",
-"Rastelo",
-"Vassourão",
-“Riscadeira”
-],
 
-"Ferramenta elétrica":[
-"Esmerilhadeira",
-"Extensão",
-"Furadeira",
-"Martelete",
-"Parafusadeira",
-"Passa arame",
-"Serra mármore"
-],
+    "Ferramenta grande":[
+        "Alavanca",
+        "Balde",
+        "Chibanca",
+        "Enxada",
+        "Pá",
+        "Rastelo",
+        "Vassourão"
+    ],
 
-"Ferramenta pequena":[
-"Alicate geral",
-"Bico estrela",
-"Bloco de espuma",
-"Broca de furadeira 10",
-"Broca de furadeira 11",
-"Broca de furadeira 12",
-"Broca de furadeira 4",
-"Broca de furadeira 5",
-"Broca de furadeira 6",
-"Broca de furadeira 7",
-"Broca de furadeira 8",
-"Broca de furadeira 9",
-"Broca de martelete 10",
-"Broca de martelete 11",
-"Broca de martelete 12",
-"Broca de martelete 5",
-"Broca de martelete 6",
-"Broca de martelete 7",
-"Broca de martelete 8",
-"Broca de martelete 9",
-"Broca ponteiro",
-"Broca talhadeira",
-"Chave allen",
-"Chave de boca 14",
-"Chave de boca 17",
-"Chave de boca 24",
-"Chave estrela",
-"Colher de pedreiro",
-"Desempenadeira EVA",
-"Desempenadeira crespa",
-"Desempenadeira lisa",
-"Fita crepe",
-"Fita de isolamento preta",
-"Fita durex",
-"Lápis de pedreiro",
-"Lima",
-"Linha de pedreiro",
-"Marreta de 1kg",
-"Marreta de 2kg",
-"Marreta de borracha",
-"Martelo",
-"Nível de mão grande",
-"Nível de mão pequeno",
-"Pé de cabra",
-"Ponteiro",
-"Prumo",
-"Régua",
-"Serra copo",
-"Talhadeira",
-"Tesoura de cortar zinco",
-"Trena de 5m",
-"Trena de 8m",
-“Garrafa”,
-“Torques”,
-“Esquadro”,
-“Chave de Cano”,
-“Espátula”,
-“Brocha”,
-“Desempenadeira Dentada de Alumínio”
-]
+    "Ferramenta elétrica":[
+        "Esmerilhadeira",
+        "Extensão",
+        "Furadeira",
+        "Martelete",
+        "Parafusadeira",
+        "Passa arame",
+        "Serra mármore"
+    ],
+
+    "Ferramenta pequena":[
+        "Alicate geral",
+        "Bico estrela",
+        "Bloco de espuma",
+        "Chave allen",
+        "Chave estrela",
+        "Colher de pedreiro",
+        "Desempenadeira EVA",
+        "Desempenadeira lisa",
+        "Martelo",
+        "Marreta de 1kg",
+        "Marreta de 2kg",
+        "Marreta de borracha",
+        "Nível de mão grande",
+        "Nível de mão pequeno",
+        "Ponteiro",
+        "Prumo",
+        "Régua",
+        "Talhadeira",
+        "Trena de 5m",
+        "Trena de 8m"
+    ]
 
 };
-
 
 function atualizarFerramentas(){
 
@@ -880,6 +840,15 @@ LIMPAR FORMULÁRIO
 ========================= */
 
 function limparFormulario(){
+
+    document.getElementById("nomePessoa").value = "";
+
+    document.getElementById("grupoPessoa").value =
+    "Avulso - Sem grupo";
+
+    document.getElementById("etapa").value = "";
+
+    document.getElementById("categoria").value = "";
 
     document.getElementById("ferramenta").innerHTML =
     `<option value="">Selecione</option>`;
