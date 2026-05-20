@@ -2409,7 +2409,6 @@ function mostrarResumo(){
     "block";
 
 }
-
 /* =========================
 ASSINATURA
 ========================= */
@@ -2427,64 +2426,64 @@ let desenhando = false;
 
 function pegarPosicao(e){
 
-    const rect =
-    canvas.getBoundingClientRect();
+    const rect =
+    canvas.getBoundingClientRect();
 
-    if(e.touches){
+    if(e.touches){
 
-        return {
+        return {
 
-            x:e.touches[0].clientX - rect.left,
-            y:e.touches[0].clientY - rect.top
+            x:e.touches[0].clientX - rect.left,
+            y:e.touches[0].clientY - rect.top
 
-        };
+        };
 
-    }
+    }
 
-    return {
+    return {
 
-        x:e.clientX - rect.left,
-        y:e.clientY - rect.top
+        x:e.clientX - rect.left,
+        y:e.clientY - rect.top
 
-    };
+    };
 
 }
 
 function iniciar(e){
 
-    desenhando = true;
+    desenhando = true;
 
-    const pos = pegarPosicao(e);
+    const pos = pegarPosicao(e);
 
-    ctx.beginPath();
+    ctx.beginPath();
 
-    ctx.moveTo(pos.x,pos.y);
+    ctx.moveTo(pos.x,pos.y);
 
 }
 
 function desenhar(e){
 
-    if(!desenhando) return;
+    if(!desenhando) return;
 
-    e.preventDefault();
+    e.preventDefault();
 
-    const pos = pegarPosicao(e);
+    const pos = pegarPosicao(e);
 
-    ctx.lineTo(pos.x,pos.y);
+    ctx.lineTo(pos.x,pos.y);
 
-    ctx.strokeStyle = "#000";
+    ctx.strokeStyle = "#000";
 
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 2;
 
-    ctx.lineCap = "round";
+    ctx.lineCap = "round";
 
-    ctx.stroke();
+    ctx.stroke();
 
 }
 
 function parar(){
 
-    desenhando = false;
+    desenhando = false;
 
 }
 
@@ -2498,12 +2497,12 @@ canvas.addEventListener("touchend", parar);
 
 function limparAssinatura(){
 
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
 
 }
 
@@ -2513,28 +2512,275 @@ CONFIRMAR ENTREGA
 
 function confirmarEntrega(event){
 
-    event.preventDefault();
+    event.preventDefault();
 
-    const assinatura =
-    canvas.toDataURL("image/png");
+    const assinatura =
+    canvas.toDataURL("image/png");
 
-    const nome =
-    document.getElementById("nomePessoa").value;
+    const nome =
+    document.getElementById("nomePessoa").value;
 
-    const grupo =
-    document.getElementById("grupoPessoa").value;
+    const grupo =
+    document.getElementById("grupoPessoa").value;
 
-    const entreguePor =
-    document.getElementById("entreguePor").value;
+    const entreguePor =
+    document.getElementById("entreguePor").value;
 
-    const etapa =
-    document.querySelector('input[name="etapa"]:checked').value;
+    const etapa =
+    document.querySelector('input[name="etapa"]:checked').value;
 
-    const data =
-    new Date().toLocaleString("pt-BR");
+    const data =
+    new Date().toLocaleString("pt-BR");
 
-    const tbody =
-    document.getElementById("tbody");
+    const tbody =
+    document.getElementById("tbody");
 
-    Object.entries(ferramentasSelecionadas)
- 
+    Object.entries(ferramentasSelecionadas)
+    .filter(([_,dados])=>dados.selecionado)
+    .forEach(([nomeFerramenta,dados])=>{
+
+        tbody.innerHTML += `
+
+            <tr>
+
+                <td>${nome}</td>
+
+                <td>${grupo}</td>
+
+                <td>${dados.categoria}</td>
+
+                <td>${nomeFerramenta}</td>
+
+                <td>${dados.quantidade}</td>
+
+                <td>${etapa}</td>
+
+                <td>${data}</td>
+
+                <td>${entreguePor}</td>
+
+                <td>
+
+                    <input
+                        type="checkbox"
+                        class="checkbox"
+                    >
+
+                </td>
+
+                <td>
+
+                    <img
+                        src="${assinatura}"
+                        class="assinatura-img"
+                    >
+
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
+    salvarDados();
+
+    alert("Entrega salva com sucesso.");
+
+    document.getElementById("resumo").style.display =
+    "none";
+
+    limparAssinatura();
+
+}
+
+/* =========================
+LIMPAR TABELA
+========================= */
+
+function limparTabela(){
+
+    if(confirm("Deseja apagar toda a tabela?")){
+
+        document.getElementById("tbody").innerHTML =
+        "";
+
+        localStorage.removeItem(
+            "dadosFerramentasVM"
+        );
+
+    }
+
+}
+
+/* =========================
+PDF
+========================= */
+
+function baixarPDF(){
+
+    const { jsPDF } = window.jspdf;
+
+    const doc =
+    new jsPDF("landscape");
+
+    const logo =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP_N9FDlaPHwC_g8lj_j5SbreF5nwMz_O6evgHvOBX6o8M-9JeYA&s&ec=121657058";
+
+    const img =
+    new Image();
+
+    img.crossOrigin = "Anonymous";
+
+    img.src = logo;
+
+    img.onload = function(){
+
+        doc.addImage(
+            img,
+            "PNG",
+            10,
+            8,
+            22,
+            22
+        );
+
+        doc.setFontSize(18);
+
+        doc.setTextColor(139,30,30);
+
+        doc.text(
+            "Controle de Ferramentas - Viana e Moura",
+            38,
+            22
+        );
+
+        const body = [];
+
+        document.querySelectorAll("#tbody tr")
+        .forEach(tr=>{
+
+            const cols =
+            tr.querySelectorAll("td");
+
+            const devolvido =
+            cols[8].querySelector("input").checked
+            ? "SIM"
+            : "NÃO";
+
+            body.push([
+
+                cols[0].innerText,
+                cols[1].innerText,
+                cols[2].innerText,
+                cols[3].innerText,
+                cols[4].innerText,
+                cols[5].innerText,
+                cols[6].innerText,
+                cols[7].innerText,
+                devolvido,
+                ""
+
+            ]);
+
+        });
+
+        doc.autoTable({
+
+            startY:35,
+
+            head:[[
+                "Nome",
+                "Grupo",
+                "Categoria",
+                "Ferramenta",
+                "Qtd",
+                "Etapa",
+                "Data",
+                "Entregue por",
+                "Devolvido",
+                "Assinatura"
+            ]],
+
+            body:body,
+
+            styles:{
+                fontSize:8,
+                minCellHeight:25
+            },
+
+            headStyles:{
+                fillColor:[139,30,30]
+            },
+
+            didDrawCell:function(data){
+
+                if(
+                    data.section === "body" &&
+                    data.column.index === 9
+                ){
+
+                    const tr =
+                    document.querySelectorAll("#tbody tr")[data.row.index];
+
+                    const assinatura =
+                    tr.querySelector("img");
+
+                    if(assinatura){
+
+                        doc.addImage(
+
+                            assinatura.src,
+
+                            "PNG",
+
+                            data.cell.x + 2,
+
+                            data.cell.y + 2,
+
+                            30,
+
+                            12
+
+                        );
+
+                    }
+
+                }
+
+            }
+
+        });
+
+        const agora =
+        new Date();
+
+        const nomeArquivo =
+        `Controle_Ferramentas_${agora.getTime()}.pdf`;
+
+        doc.save(nomeArquivo);
+
+    };
+
+}
+
+/* =========================
+INICIAR
+========================= */
+
+function iniciarSistema(){
+
+    atualizarSelectPessoas();
+
+    atualizarSelectGrupos();
+
+    carregarDados();
+
+}
+
+iniciarSistema();
+
+</script>
+
+</body>
+</html>
