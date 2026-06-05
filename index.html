@@ -1389,10 +1389,6 @@ function limparTabela(){
 
 }
 
-/* =========================
-PDF
-========================= */
-
 function baixarPDF(){
 
     const { jsPDF } = window.jspdf;
@@ -1418,6 +1414,8 @@ function baixarPDF(){
 
     const linhas = [];
 
+    const assinaturas = [];
+
     document.querySelectorAll("#tbody tr")
     .forEach(tr=>{
 
@@ -1433,11 +1431,21 @@ function baixarPDF(){
             tds[5].innerText,
             tds[6].innerText,
             tds[7].innerText,
+
             tds[8].querySelector("input").checked
             ? "Devolvido"
-            : "Pendente"
+            : "Pendente",
+
+            ""
 
         ]);
+
+        const img =
+        tds[9].querySelector("img");
+
+        assinaturas.push(
+            img ? img.src : null
+        );
 
     });
 
@@ -1452,7 +1460,8 @@ function baixarPDF(){
             "Etapa",
             "Data",
             "Entregue por",
-            "Devolução"
+            "Devolução",
+            "Assinatura"
         ]],
 
         body:linhas,
@@ -1460,7 +1469,49 @@ function baixarPDF(){
         startY:25,
 
         styles:{
-            fontSize:8
+            fontSize:8,
+            cellPadding:2,
+            minCellHeight:18
+        },
+
+        columnStyles:{
+            9:{
+                cellWidth:35
+            }
+        },
+
+        didDrawCell:function(data){
+
+            if(
+                data.section === "body" &&
+                data.column.index === 9
+            ){
+
+                const assinatura =
+                assinaturas[data.row.index];
+
+                if(assinatura){
+
+                    doc.addImage(
+
+                        assinatura,
+
+                        "PNG",
+
+                        data.cell.x + 1,
+
+                        data.cell.y + 1,
+
+                        32,
+
+                        14
+
+                    );
+
+                }
+
+            }
+
         }
 
     });
